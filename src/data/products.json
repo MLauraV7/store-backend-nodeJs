@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "Remera estampada",
+    "description": "Remera de algodón con diseño exclusivo",
+    "code": "REM456",
+    "price": 7999,
+    "status": true,
+    "stock": 50,
+    "category": "Indumentaria",
+    "thumbnails": [
+      "https://e3yyfksmj4t.exactdn.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-02-11-at-09.07.18.jpeg?strip=all&lossy=1&ssl=1"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Campera de invierno",
+    "description": "Campera térmica impermeable",
+    "code": "CAM987",
+    "price": 18999,
+    "status": true,
+    "stock": 12,
+    "category": "Abrigo",
+    "thumbnails": [
+      "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw1bcb568b/products/ADIB4186/ADIB4186-1.JPG"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Zapatillas deportivas",
+    "description": "Zapatillas cómodas para correr",
+    "code": "ZAP123",
+    "price": 15999,
+    "status": true,
+    "stock": 30,
+    "category": "Calzado",
+    "thumbnails": [
+      "https://img.kwcdn.com/product/fancy/b47e1fda-b0b9-48d0-94cf-0c3cad43ef64.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp"
+    ]
+  }
+]

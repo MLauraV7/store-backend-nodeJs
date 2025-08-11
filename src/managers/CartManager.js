@@ -16,47 +16,62 @@ class CartManager {
   }
 
   async createCart() {
-    const carts = await this.getCarts();
+    try{
+      const carts = await this.getCarts();
 
-    const newId = carts.length === 0 ? 1 : carts[carts.length - 1].id + 1;
+      const newId = carts.length === 0 ? 1 : carts[carts.length - 1].id + 1;
 
-    const newCart = {
-      id: newId,
-      products: []
-    };
+      const newCart = {
+        id: newId,
+        products: []
+      };
 
-    carts.push(newCart);
-    await fs.writeFile(this.path, JSON.stringify(carts, null, 2));
-    return newCart;
+      carts.push(newCart);
+      await fs.writeFile(this.path, JSON.stringify(carts, null, 2));
+      return newCart;
+    } catch (error){
+      console.error("Error al crear el carrito:", error);
+      return null;
+    }
   }
 
   async getCartById(id) {
-    const carts = await this.getCarts();
-    return carts.find(c => c.id === id);
+    try{
+      const carts = await this.getCarts();
+      return carts.find(c => c.id === id);
+    } catch (error) {
+      console.error("Error al obtener el carrito id:", error);
+      return null;
+    }
   }
 
   async addProductToCart(cartId, productId) {
-    const carts = await this.getCarts();
-    const cartIndex = carts.findIndex(c => c.id === cartId);
+    try {
+      const carts = await this.getCarts();
+      const cartIndex = carts.findIndex(c => c.id === cartId);
 
-    if (cartIndex === -1) {
+      if (cartIndex === -1) {
+        return null;
+      }
+
+      const cart = carts[cartIndex];
+
+      const productInCart = cart.products.find(p => p.product === productId);
+
+      if (productInCart) {
+        productInCart.quantity += 1;
+      } else {
+        cart.products.push({ product: productId, quantity: 1 });
+      }
+
+      carts[cartIndex] = cart;
+      await fs.writeFile(this.path, JSON.stringify(carts, null, 2));
+
+      return cart;
+    } catch (error){
+      console.error("Error al agregar el producto al carrito:", error);
       return null;
     }
-
-    const cart = carts[cartIndex];
-
-    const productInCart = cart.products.find(p => p.product === productId);
-
-    if (productInCart) {
-      productInCart.quantity += 1;
-    } else {
-      cart.products.push({ product: productId, quantity: 1 });
-    }
-
-    carts[cartIndex] = cart;
-    await fs.writeFile(this.path, JSON.stringify(carts, null, 2));
-
-    return cart;
   }
 }
 

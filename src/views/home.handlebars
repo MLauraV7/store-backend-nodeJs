@@ -3,6 +3,10 @@
     {{#each products}}
     <li>
         <strong>{{this.title}}</strong> - ${{this.price}}
+        <br>
+        {{this.description}}
+        <br>
+        <em>Categoría:</em> {{this.category}} | <em>Stock:</em> {{this.stock}} | <em>ID:</em> {{this.id}}
     </li>
     {{/each}}
 </ul>

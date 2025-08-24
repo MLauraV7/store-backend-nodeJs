@@ -37,5 +37,14 @@
     "thumbnails": [
       "https://img.kwcdn.com/product/fancy/b47e1fda-b0b9-48d0-94cf-0c3cad43ef64.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp"
     ]
+  },
+  {
+    "id": 4,
+    "title": "Vestido floreado",
+    "description": "Vestido con volados laterales",
+    "price": 10000,
+    "stock": 47,
+    "category": "Indumentaria",
+    "code": "code-1756068134109"
   }
 ]

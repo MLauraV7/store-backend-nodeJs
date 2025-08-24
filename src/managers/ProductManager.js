@@ -3,7 +3,8 @@ const path = require('path');
 
 class ProductManager {
   constructor() {
-    this.path = path.resolve('./src/data/products.json');
+    const dataPath = path.join(__dirname, '../data/products.json');
+    this.path = dataPath;
   }
 
   async getProducts() {

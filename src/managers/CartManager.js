@@ -3,7 +3,8 @@ const path = require('path');
 
 class CartManager {
   constructor() {
-    this.path = path.resolve('./src/data/carts.json');
+    const dataPath = path.join(__dirname, '../data/carts.json');
+    this.path = dataPath;
   }
 
   async getCarts() {

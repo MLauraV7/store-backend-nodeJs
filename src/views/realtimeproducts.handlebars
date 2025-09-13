@@ -1,16 +1,16 @@
 <h1>Productos</h1>
 
 <ul id="product-list">
-    {{#each products}}
-     <li>
-        <strong>{{this.title}}</strong> - ${{this.price}}
-        <br>
-        {{this.description}}  
-        <br>
-        <em>Categoría:</em> {{this.category}} | <em>Stock:</em> {{this.stock}} | <em>ID:</em> {{this.id}}
-    </li>
-    {{/each}}
+  {{#each products}}
+   <li>
+      <strong>{{this.title}}</strong> - ${{this.price}}
+      <br>{{this.description}}  
+      <br><em>Categoría:</em> {{this.category}} | <em>Stock:</em> {{this.stock}} | <em>ID:</em> {{this.id}}
+      <button class="btn add-to-cart" data-pid="{{this._id}}">Agregar al carrito</button>
+   </li>
+  {{/each}}
 </ul>
+
 <hr>
 <h2>Agregar productos</h2>
 <form id="product-form">
@@ -19,13 +19,14 @@
   <input type="number" name="price" placeholder="Precio" required step="0.01">
   <input type="number" name="stock" placeholder="Stock" required>
   <input type="text" name="category" placeholder="Categoría" required>
-  <button type="submit">Agregar</button>
+  <button type="submit" class="btn">Agregar</button>
 </form>
+
 <hr>
 <h2>Eliminar producto</h2>
 <form id="delete-form">
     <input type="text" name="id" placeholder="ID del producto" required>
-    <button type="submit">Eliminar</button>
+    <button type="submit" class="btn">Eliminar</button>
 </form>
 
 <script src="/socket.io/socket.io.js"></script>

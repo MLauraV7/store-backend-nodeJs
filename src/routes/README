@@ -1,0 +1,41 @@
+# ElectroHub - Entrega Final
+
+ElectroHub es una aplicación de e-commerce desarrollada con Node.js, Express, MongoDB y Handlebars. Permite la gestión completa de productos y carritos, con filtros, paginación, ordenamiento y operaciones avanzadas sobre el carrito.
+
+---
+
+## Tecnologías utilizadas
+
+- **Backend:** Node.js, Express  
+- **Base de datos:** MongoDB (persistencia principal)  
+- **Vistas:** Handlebars  
+- **Frontend:** HTML, CSS, JS  
+
+---
+
+## Endpoints principales
+
+### Productos (`/api/products`)
+
+- `GET /` - Listado de productos con query params: `limit`, `page`, `sort`, `query`.  
+- `GET /:pid` - Detalle de un producto.  
+- `POST /` - Agregar producto.  
+- `PUT /:pid` - Actualizar producto.  
+- `DELETE /:pid` - Eliminar producto.  
+
+### Carritos (`/api/carts`)
+
+- `POST /` - Crear carrito.  
+- `GET /:cid` - Ver carrito específico con productos completos.  
+- `PUT /:cid` - Actualizar todos los productos del carrito.  
+- `PUT /:cid/products/:pid` - Actualizar cantidad de un producto.  
+- `DELETE /:cid/products/:pid` - Eliminar un producto del carrito.  
+- `DELETE /:cid` - Vaciar carrito completo.  
+
+---
+
+## Cómo correr el proyecto
+Clonar el repositorio.
+Moverse a la carpeta del proyecto.
+Ejecutar el comando: npm install para instalar las dependencias.
+Levantar el servidor local con: npm run dev.
